@@ -33,3 +33,7 @@ You can use online editor as a playground: [https://codesandbox.io/s/new?file=/s
 HTML: [https://www.w3schools.com/html/default.asp](https://www.w3schools.com/html/default.asp)
 CSS: [https://www.w3schools.com/css/default.asp](https://www.w3schools.com/css/default.asp)
 JAVASCRIPT: [https://www.w3schools.com/js/default.asp](https://www.w3schools.com/js/default.asp)
+
+### Mock API's
+[https://jsonplaceholder.typicode.com/](https://jsonplaceholder.typicode.com/)
+[https://jsonplaceholder.typicode.com/guide/](https://jsonplaceholder.typicode.com/guide/)
