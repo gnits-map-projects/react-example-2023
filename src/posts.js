@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-// import axios from "axios";
+import AuthenticationPage from "./AuthenticationPage"; 
 
 function Posts() {
     const [posts, setPosts] = useState([]);
@@ -67,6 +67,7 @@ function Posts() {
     }
 
     return (
+        <AuthenticationPage>
         <div>
             <button onClick={() => setPage('form')}>Show Create Form</button>
             <button onClick={() => setPage('list')}>Show Post list</button>
@@ -118,7 +119,7 @@ function Posts() {
                 </form>
             }
         </div>
-
+       </AuthenticationPage>
     )
 }
 

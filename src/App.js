@@ -1,35 +1,37 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {BrowserRouter, Routes, Route, useNavigate} from 'react-router-dom'
 import './App.css';
 import Counter from './counter';
 import DogsList from './dogs-list';
 import Posts from './posts';
 import AppContext from './state';
 
-function App() {
-  const [showPage, setPage] = useState('dogs-list');
-
+const NavBar = () => {
+  const navigate = useNavigate();
   return (
-    <AppContext>
-      <div className="App">
-        <div>
-        <hr />
-        <button onClick={() => setPage('counter')}>Show counter</button>
-        <button onClick={() => setPage('dogs-list')}>Dogs List</button>
-        <button onClick={() => setPage('posts')}>Show Posts</button>
-        <hr />
-        {showPage === "counter" &&
-          <Counter />
-        }
-        {showPage === "dogs-list" &&
-          <DogsList />
-        }
-        {
-          showPage === 'posts' &&
-          <Posts />
-        }
+    <div>
+    <button onClick={() => navigate("/counter")}>Show counter</button>
+    <button onClick={() => navigate('/dogs-list')}>Dogs List</button>
+    <button onClick={() => navigate('/posts')}>Show Posts</button>
+    <hr />
+    </div>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContext>
+        <div className="App">
+          <NavBar />
+          <Routes>
+            <Route path='/counter' element={<Counter />} />
+            <Route path='/dogs-list' element={<DogsList />} />
+            <Route path='/posts' element={<Posts />} />
+          </Routes>
         </div>
-      </div>
-    </AppContext>
+      </AppContext>
+    </BrowserRouter>
   );
 }
 
