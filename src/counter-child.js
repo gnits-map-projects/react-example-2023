@@ -1,7 +1,6 @@
 import React from "react";
 
 function CounterChild ({count, setConter}) {
-    console.log("Counter child rendered");
     return (
       <div>
         <hr />
